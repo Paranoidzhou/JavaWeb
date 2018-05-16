@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>day07</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>day 07</h1>
+<h2>复习</h2>
+<h3>js的历史</h3>
+<h3>js的使用方式</h3>
+<h3>变量的声明与定义 var x=123; x=&quot;abc&quot;</h3>
+<h3>数据类型 number string  boolean null undefined</h3>
+<h3>NaN isNaN() typeof() parseInt()</h3>
+<h3>! &amp;&amp; ||</h3>
+<h3>&lt; &gt; &lt;= &gt;= == != ===</h3>
+<h3>if else     if(可以放任何值当做boolean表达式)</h3>
+<h2>循环 for while do-while</h2>
+<h3>输入1-100,计算该数的阶乘</h3>
+<pre><code>- n(正整数)的阶乘 1*2*3...*n
+- 0的阶乘,固定为1
+- 负数,小数没有阶乘
+</code></pre>
+
+<p><img src="1.png" /></p>
+<pre><code>    &lt;p&gt;n(正整数)的阶乘 1*2*3...*n&lt;/p&gt;
+    &lt;p&gt;0的阶乘,固定为1&lt;/p&gt;
+    &lt;p&gt;负数,小数没有阶乘&lt;/p&gt;
+    &lt;input type=&quot;text&quot; id=&quot;num&quot;&gt;
+    &lt;input type=&quot;button&quot; value=&quot;阶乘&quot;   
+    onclick=&quot;cal();&quot;&gt;
+    &lt;span id=&quot;result&quot;&gt;&lt;/span&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+    function cal(){
+        //1.获取文本框中的值
+        var input=document.getElementById(&quot;num&quot;);
+        var num=input.value;
+        //2.获取span对象
+        var span=document.getElementById(&quot;result&quot;);
+        //3.判断num是不是数字
+        if(isNaN(num)){
+            //不是数字,span中提示
+            span.innerHTML=&quot;请输入数字&quot;;
+        }else{
+            //是数字,先去除小数点
+            num=parseInt(num);
+            //把去除完小数点的整数,放回到文本框中去
+            input.value=num;
+            if(num&lt;0){
+                span.innerHTML=&quot;负数没有阶乘&quot;;
+            }else if(num==0){
+                span.innerHTML=&quot;0的阶乘固定为1&quot;;
+            }else{
+                //计算正整数的阶乘
+                var res=1;
+                for(var i=num;i;i--){
+                    res*=i;
+                }
+                span.innerHTML=res;
+            }
+        }
+    }
+    &lt;/script&gt;
+</code></pre>
+
+<h2>javascript常用API</h2>
+<h3>string</h3>
+<h3>1.创建string对象的2种方式</h3>
+<pre><code>var str1=&quot;hello world&quot;;
+var str2=new String(&quot;hello world&quot;);
+</code></pre>
+
+<h3>2.大小写的转换</h3>
+<pre><code>str.toLowerCase();
+str.toUpperCase();
+</code></pre>
+
+<h3>3.获取指定的字符(串)</h3>
+<pre><code>str.charAt(index);
+
+var str=&quot;javascript网页教程&quot;;
+var str1=str.charAt(12);
+</code></pre>
+
+<h3>4.查询指定的字符串</h3>
+<pre><code>str.indexOf(&quot;&quot;);
+str.lastIndexOf(&quot;&quot;);
+
+var str=&quot;javascript网页教程&quot;;
+var index=str.indexOf(&quot;a&quot;);
+var index=str.lastIndexOf(&quot;a&quot;);
+</code></pre>
+
+<h3>5.获取子字符串</h3>
+<pre><code>    str.substring(star,[end]);
+    var str=&quot;abcdefghi&quot;;
+    //包头不包尾
+    var str1=str.substring(2,4);
+</code></pre>
+
+<h3>6. 替换子字符串</h3>
+<pre><code>    str.replace(str1,str2);
+    str1--要找到的字符串
+    str2--新的字符串
+    返回值是替换后的字符串
+
+    var str=&quot;abcde&quot;;
+    var str1=str.replace(&quot;cd&quot;,&quot;aaaa&quot;);
+</code></pre>
+
+<h3>7.拆分子字符串</h3>
+<pre><code>    str.split(str1,[length]);
+    str1--分割用的子字符串
+    length,指定返回数组的最大长度,可省略
+    返回值为,分割之后的字符串数组
+
+    var str=&quot;一,二,三,四,五,六,日&quot;;
+    var strArray=str.split(&quot;,&quot;,5);
+</code></pre>
+
+<h3>课堂练习</h3>
+<p><img src="2.png" /></p>
+<pre><code>&lt;ul id=&quot;ul&quot;&gt;
+
+&lt;/ul&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var oUl=document.getElementById(&quot;ul&quot;);
+    //假设从服务器获取了一组数据
+    var contents=[&quot;天气预报&quot;,&quot;奇人异事&quot;,&quot;法制社会&quot;,&quot;寻人启事&quot;,&quot;明星趣事&quot;];
+    //制作一个string的模板,使用[content]占位
+    var str=&quot;&lt;li&gt;&lt;span&gt;&lt;a&gt;[content]&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;&quot;;
+    for(var i=0;i&lt;contents.length;i++){
+        //替换模板中的[content]
+        oUl.innerHTML+=str.replace(&quot;[content]&quot;,contents[i]);
+    }
+
+
+    //console.log(oUl.innerHTML); 
+&lt;/script&gt;
+</code></pre>
+
+<h2>Number对象的常用方法</h2>
+<pre><code>    toFixed(length):把number转换为字符串,保留小数点后一定的位数.如果必要,该数字会被四舍五入,也可以用0补足位数
+</code></pre>
+
+<h2>数组</h2>
+<h3>js中的数组特点</h3>
+<pre><code>var arr=[&quot;打一顿&quot;,&quot;不多于&quot;,12.3,true];
+
+var arr1=new Array();
+arr1[0]=&quot;123&quot;;
+arr1.push(23);
+</code></pre>
+
+<ol>
+<li>Array在js中都是obj的数组</li>
+<li>js中数组可以同时存放不同数据类型的值</li>
+<li>js中的长度可变</li>
+<li>
+<p>两种创建方式,不管哪一种,创建出来,都是object类型</p>
+</li>
+<li>
+<p>数组常用api</p>
+<pre><code>arr.reverse() // 反转输出
+</code></pre>
+
+</li>
+</ol>
+<h3>arr.sort();//排序</h3>
+<h3>sort方法,是按照数组中,每一个元素的unicode编码进行排序的,比完第一位比第二位</h3>
+<h3>string就是这样排序,但是这种排序不适用于number</h3>
+<p><img src="3.png" /></p>
+<pre><code>    var arr=[5,12,3,14,26,1];
+    //var arr=[&quot;a&quot;,&quot;ab&quot;,&quot;b&quot;,&quot;c&quot;,&quot;bd&quot;,&quot;d&quot;];
+    //console.log(arr.sort());//1,3,5,12,14,26
+
+    //修改比较规则,按照数字大小比较
+/*  function x(a,b){
+        return b-a;
+    } */
+    arr.sort(function(a,b){
+        return a-b;
+    });
+</code></pre>
+
+<h3>math</h3>
+<pre><code>console.log(Math.round(4.56));
+Math.floor(4.5);
+</code></pre>
+
+<h3>date</h3>
+<ol>
+<li>
+<p>创建客户机当前时间</p>
+<p>var d1=new Date();</p>
+</li>
+<li>
+<p>创建指定时间的date对象(指定时间一般源于服务器)</p>
+<p>var d2=new Date(&quot;2016/12/12 12:12:12&quot;);</p>
+</li>
+<li>
+<p>读写时间的毫秒数</p>
+<pre><code>getTime()读  setTime()写
+</code></pre>
+
+</li>
+</ol>
+<h3>　date的API</h3>
+<h3>从服务器拿到时间对象,在页面根据不同的需求显示</h3>
+<pre><code>    d1.getFullYear();//获取年
+    d1.getMonth();//获取月,需要+1
+    d1.getDate();//月的天
+    d1.getDay();//周的天
+
+    d1.getHours();//获得小时
+    d1.getMinutes();//分钟
+    d1.getSeconds();//秒
+</code></pre>
+
+<h3>date转化成本地时间格式</h3>
+<pre><code>d1.toString();
+d1.toLocaleTimeString();
+d1.toLocaleDateString();
+</code></pre>
+
+<h3>正则</h3>
+<pre><code>.  任意字符
+\w 任意字母,数字,下划线
+\s 任意空白字符
+\d 任意数字
+^   字符串开头
+$   字符串结束
+</code></pre>
+
+<h3>1.如何创建正则对象</h3>
+<pre><code>- 直接创建
+
+    var reg=/正则表达式/[模式]
+    var reg=/no/g;
+
+- 创建对象
+
+    var reg=new RegExp(正则表达式,[模式]);
+    var reg=new RegExp('\s\d');//此句有坑
+
+- 全局模式,设定当前匹配为全局,g
+- 设置当前匹配模式忽略大小写,i
+</code></pre>
+
+<h3>2.正则对象的方法 reg.XXX(str);</h3>
+<pre><code>reg.exec(str);
+//从str中找到匹配正则的子串
+//普通模式下,返回第一个符合要求的子串
+//全局模式下,第n次执行,返回符合要求的第n个子串
+
+var str=&quot;you can you up,no can no bi bi&quot;;
+var reg=/no/g;
+//reg.exec(str);
+//从str中找到匹配正则的子串
+//普通模式下,返回第一个符合要求的子串
+//全局模式下,第n次执行,返回符合要求的第n个子串
+console.log(reg.exec(str));
+console.log(reg.exec(str));
+console.log(reg.exec(str));
+console.log(reg.exec(str));
+
+//reg.test(str);
+//判断str中是否 包含与reg匹配的子串
+console.log(reg.test(str));
+</code></pre>
+
+<h3>3.字符串匹配正则的方法 str.XXX(reg);</h3>
+<pre><code>    1. str.replace(reg,&quot;&quot;);
+
+    将str中的与reg匹配的所有子串都替换成目标子串
+
+    var str=&quot;you can you up,no can no bi bi&quot;;
+    var reg=/no/g;
+    var str1=str.replace(reg,&quot;bu&quot;);
+    console.log(str1);
+
+    2. str.match(reg);
+
+       从str中找出和reg匹配的子串,返回值是数组
+
+    var str=&quot;you can you up,no can no bi bi&quot;;
+    var reg=/no/g;
+    //var str1=str.replace(reg,&quot;bu&quot;);
+    //console.log(str1);
+    console.log(str.match(reg));
+
+
+    3. str.search(reg);
+
+        从str中找出和reg匹配的第一个子串的索引
+
+        console.log(str.search(reg));
+</code></pre>
+
+<h2>作业</h2>
+<h3>全天笔记要求过一遍</h3>
+<h3>arr.sort();原理,可以表述清晰</h3>
+<h3>背表单验证的代码</h3>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

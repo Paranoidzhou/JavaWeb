@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>day06</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>day06</h1>
+<h2>JavaScript</h2>
+<h3>网页所有的交互都要使用JavaScript</h3>
+<h2>Javascript的发展</h2>
+<h3>网景找到ECMA(欧洲计算机联盟协会)统一了Javascript标准</h3>
+<h3>我们要学习的就是这一套统一的标准</h3>
+<h3>JavaScript的特点</h3>
+<ol>
+<li>可以使用任何文本编译工具编写</li>
+<li>由浏览器内置的JavaScript引擎执行代码</li>
+<li>解释执行:事先不编译,逐行执行</li>
+<li>基于对象:内置了大量写好的对象</li>
+</ol>
+<h3>学习javascript</h3>
+<h3>1. 学习如何找到标签对象</h3>
+<h3>2. 学习对标签对象的属性内容,进行增删改查.</h3>
+<h2>JavaScript的使用</h2>
+<ol>
+<li>
+<p>事件定义式,在事件定义时直接写js代码</p>
+<!-- 事件:用户在做出某种操作时,会调用js代码  -->
+<!-- 事件就是js调用时机,比如单击按钮等 -->
+<!-- 1.事件定义式,在定义事件时,直接写js代码 -->
+<p><input type="button" value="事件定义式"
+onclick="alert('我被单击了');"></p>
+</li>
+<li>
+<p>嵌入式,在<code>&lt;script&gt;</code>标签内,写js代码</p>
+<p>/* 把js代码写到script标签内部 <em>/
+/</em> script标签可以放到html的任何位置 <em>/
+/</em>但通常放到head标签中 */</p>
+<p>/* function是关键字,用来声明函数 <em>/
+/</em> fn1是函数名,小括号内可以声明参数 <em>/
+/</em> js中函数都是公有的,不需要修饰符 <em>/
+/</em> 函数不需要声明返回值类型 <em>/
+/</em> 函数体中没写retrun,函数调用时默认返回值为undefined */
+function fn1(){
+	alert(&quot;我是嵌入式js的使用&quot;);
+}
+function fn2(){
+	alert(&quot;我是验证返回值&quot;);
+	return 123;
+}</p>
+</li>
+<li>
+<p>文件调用式</p>
+<p><input type="button" value="文件调用式"
+onclick="fn3();"></p>
+<p>my.js文件中</p>
+<p>function fn3(){
+	console.log(&quot;我是文件调用式&quot;);
+}</p>
+<p>在<head>标签内部写</p>
+<p><script type="text/javascript" src="my.js"></script></p>
+</li>
+</ol>
+<h3>总结:</h3>
+<h3>文件调用式,在单独的.js文件写js代码</h3>
+<h3>需要引用到网页才能使用</h3>
+<h3>引用时:script标签必须是双标签,哪怕没有内容</h3>
+<h3>这个script作用就是导入外部的js文件,</h3>
+<h3>不允许同时引用文件,又写js代码</h3>
+<ol>
+<li>
+<p>js注释:<code>&lt;script&gt;</code>标签中,是js地盘,要使用js的注释.</p>
+<p>//      /* js不区分单引号和双引号 */</p>
+</li>
+</ol>
+<h3>课堂练习</h3>
+<ol>
+<li>事件定义式</li>
+<li>嵌入式</li>
+<li>文件调用式</li>
+<li>注释</li>
+</ol>
+<h2>js数据类型</h2>
+<h3>1.变量的声明和定义</h3>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+  //声明变量
+  var x;
+  //给变量赋值
+  //x=9;
+  //x=&quot;abc&quot;;
+  console.log(x);
+  var y=123;
+&lt;/script&gt;
+</code></pre>
+
+<h3>总结:在<code>&lt;script&gt;</code>标签中写js代码一般有两种形式</h3>
+<h3>1. 封装成函数,该函数在页面加载完成之后,用户激活事件时,被调用.</h3>
+<h3>2. 直接在标签中写js代码,这段js代码是在页面加载过程中被直接调用,其调用时机甚至比body渲染还早.</h3>
+<h2>number 类型</h2>
+<h3>不区分整型和浮点型</h3>
+<h3>所有的数字,都采用64位浮点格式存储</h3>
+<h3>js中没有double的概念</h3>
+<h2>String类型</h2>
+<h3>由Unicode字符.数字.符号组成字符序列</h3>
+<h3>由首尾一对单引号或者一对双引号括起.</h3>
+<h3>单引号和双引号,嵌套的时候,无需转义</h3>
+<h3>其他特殊字符需要转义,\n</h3>
+<h3>js中没有char的概念,字符就是一个长度的string</h3>
+<h2>boolean</h2>
+<h3>true和false</h3>
+<h3>做数学运算的时候,自动转型为数值参与计算</h3>
+<pre><code>  var s=&quot;hello&quot;;
+  var n=9;
+  var b=true;
+
+  console.log(s+n);//hello9
+  console.log(s+b);//hellotrue
+  console.log(n+b);//true--1  false--0
+  console.log(b+b);//
+</code></pre>
+
+<h3>在参与纯数学运算时,true---1 false---0</h3>
+<h3>js引擎对boolean类型的解释规则</h3>
+<ol>
+<li>非空字符串解释为true,&quot;&quot;字符串解释为false</li>
+<li>非0数字,解释为true.0为false</li>
+<li>null undefined都为false</li>
+</ol>
+<h3>强制类型转换</h3>
+<pre><code>//var n=3.14;
+//var s=&quot;3.14&quot;;
+//console.log(n.toString()+1);
+//console.log(parseInt(s)+1);
+//console.log(parseFloat(s)+1);
+//console.log(parseFloat(&quot;abc&quot;)+1);//not a number
+//console.log(parseInt(&quot;&quot;));//NaN
+</code></pre>
+
+<h3>typeof</h3>
+<pre><code>function fn1(){
+    var num=100;
+    console.log(typeof(num)==&quot;number&quot;);
+    var str=&quot;abc&quot;;
+    console.log(typeof(str)==&quot;string&quot;);
+    console.log(typeof(null));
+    console.log(typeof(undefined));
+}
+</code></pre>
+
+<h3>isNaN</h3>
+<pre><code>function fn2(){
+    //is 是什么
+    //NaN not a number  不是一个数
+    //isNaN 是不是 不是一个数
+    console.log(isNaN(56));//f  不是 NaN
+    console.log(isNaN(&quot;32&quot;));//f
+    console.log(isNaN(&quot;abc&quot;));//t 是 NaN
+    console.log(isNaN(&quot;&quot;));//f
+    console.log(parseInt(&quot;&quot;));//此处是个bug
+}
+</code></pre>
+
+<h3>课堂练习</h3>
+<p><img src="1.png" /></p>
+<pre><code>    &lt;body&gt;
+        &lt;input type=&quot;text&quot; id=&quot;num&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;平方&quot; onclick=&quot;cal();&quot;&gt;
+        = &lt;span id=&quot;result&quot;&gt;计算的结果&lt;/span&gt;
+    &lt;/body&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+    function cal(){
+        //1.获取文本框内的数 value
+        var input=document.getElementById(&quot;num&quot;);
+        var num=input.value;
+        var span=document.getElementById(&quot;result&quot;);
+        console.log(span);
+        //2.判断这个数是不是数字
+        if(num!=&quot;&quot;){
+            if(isNaN(num)){
+                //4.不是数字,span中提示用户输入错误
+                span.innerHTML=&quot;输入错误&quot;;
+            }else{
+                //3.是数字,计算,并把结果放入span显示
+                span.innerHTML=num*num;
+            }
+        }else{
+            span.innerHTML=&quot;请输入数字&quot;;
+        }
+    }
+    &lt;/script&gt;
+</code></pre>
+
+<h3>数学运算符 + - * / %  ++</h3>
+<h3>总结:</h3>
+<h3>1.纯数字的字符串,除了+会变成字符串连接,其他的运算都会自动转成数字</h3>
+<h3>2.js中的除法,如果除不尽会得到浮点数100/3</h3>
+<h3>关系运算符 &gt; &lt; &gt;= &lt;= != ==</h3>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    function doClick(){
+        var s1=&quot;123&quot;;
+        var s2=123;
+        var s3=123;
+
+        console.log(s1==s2);//t
+        console.log(s1==s3);//t
+        //全等:
+        //类型相同
+        //数据值相同
+        console.log(s1===s2);
+        console.log(s2===s3);
+    }
+    doClick();
+&lt;/script&gt;
+</code></pre>
+
+<h3>课堂练习:网页版猜数字</h3>
+<p><img src="2.png" /></p>
+<h3>逻辑运算符  ! &amp;&amp; ||</h3>
+<h3>要注意短路问题</h3>
+<h3>条件表达式</h3>
+<h3>js可以使用任何数据做条件</h3>
+<pre><code>    if(&quot;afsda&quot;){
+        console.log(1111);
+    }
+</code></pre>
+
+<h3>当使用非boolean值做条件时</h3>
+<h3>true  非空字符串 非0数字</h3>
+<h3>false null undefined &quot;&quot; 0 NaN</h3>
+<pre><code>if(NaN){
+
+}else{
+    console.log(11111);
+}
+</code></pre>
+
+<h2>作业:</h2>
+<h3>今天所有的理论和demo重新过一遍</h3>
+<h3>1.猜数字和平方</h3>
+<h3>2.提高题:选作</h3>
+<p>426029026218 2
+求出前12位奇数位数字之和.462061=19
+求出前12位偶数位数字之和.209228=23
+把 前12位奇数位数字之和 与 偶数位数字之和的3倍相加.19+69=88
+取结果的个位数.	8
+用10减去这个个位数.	2
+再取结果的个位数.	2</p>
+<p>for(var i=0;i&lt;12;i++){
+console.log(i);
+}</p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

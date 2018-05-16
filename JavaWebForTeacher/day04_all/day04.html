@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>day04</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>day04</h1>
+<h2>复习</h2>
+<h3>1. 样式表的使用</h3>
+<h5>1. 内联样式 display</h5>
+<h5>2. 内部样式</h5>
+<h5>3. 外部样式 link 导入 *.css  rel=stylesheet</h5>
+<h3>2. 样式的属性</h3>
+<h4>1. 布局相关的属性  margin  padding</h4>
+<h6>1.1 盒子模型</h6>
+<h4>2. 背景属性 background-img:url(&quot;&quot;);</h4>
+<h5>2.1 颜色设置方式 rgba(255,255,255,0~1)</h5>
+<h2>字体属性</h2>
+<pre><code>font-size:字体大小
+单位:px  cm  
+em:是一个相对度量单位   基础字号16px   12px
+font-size:1em; 用于屏幕自适应
+
+font-family:字体   &quot;微软雅黑&quot;   &quot;黑体&quot;
+font-weight:字体的粗细(磅值pt) 100pt
+
+    lighter 细一点
+    normal  正常粗细
+    bold    粗一点
+    bolder  比粗更粗
+
+font-style:字体样式 normal italic斜体
+
+
+    &lt;div id=&quot;d1&quot;&gt;测试font的div标签&lt;/div&gt;
+
+    &lt;style type=&quot;text/css&quot;&gt;
+    #d1{
+        width: 50%;
+        height: 200px;
+        border: 3px solid #aaa;
+        font-size: 40px;
+        font-family: &quot;黑体&quot;;
+        font-weight: bolder;
+        font-style: italic;
+    }
+    &lt;/style&gt;
+</code></pre>
+
+<h2>文本属性</h2>
+<pre><code>    color:文本颜色
+    text-align:文本的对齐方式
+
+        left | right | center
+
+    text-decoration:文本装饰 
+    text-decoration:none;给a标签去除下划线
+    text-decoration: underline; 
+    text-decoration: line-through;
+    text-decoration: overline;
+
+    line-height:文本行高
+
+    由于div的文本在默认情况下根据行高垂直居中
+    所以,如果希望文本在div垂直居中显示
+    只需要把行高属性,设置为div的高度
+
+    但是,此处存在bug.如果字数过多需要折行,那么行高的效果会每一行都遵循
+</code></pre>
+
+<h2>边框属性border</h2>
+<pre><code>border:1px solid black;
+border-width:边框的宽度
+border-color:边框颜色
+border-style:边框的样式 solid
+border-top:2px solid black;上边框
+border-top-width:上边框的宽度
+border-top-color:
+border-top-style:
+border-left:左边框
+border-right:右边框
+border-bottom:下边框
+
+border:none;去除边框
+
+
+    border-top: 20px solid red;/* 实线 */
+    border-left: 3px dotted blue;/* 点 */
+    border-right: 30px double green;/* 双实线 */
+    border-bottom: 10px dashed gray;/* 虚线 */
+
+    设置边框的圆角
+
+    border-radius:3px;圆角,半径
+
+    div是正方的,网页中显示圆形,只需要圆角半径设置成div宽或者高的一半就可以了
+</code></pre>
+
+<h3>课堂练习 二级菜单</h3>
+<p><img src="1.png" /></p>
+<pre><code>&lt;div id=&quot;leftsidebar_box&quot;&gt;
+    &lt;ul&gt;
+        &lt;li class=&quot;menu cmenu1&quot;&gt;我的订单
+            &lt;img src=&quot;../images/myOrder/myOrder1.png&quot;&gt;
+        &lt;/li&gt;
+        &lt;!-- 与li同级的ul是二级菜单 --&gt;
+        &lt;ul class=&quot;submenu&quot;&gt;
+            &lt;li&gt;全部订单&lt;/li&gt;
+            &lt;li&gt;待付款&lt;/li&gt;
+            &lt;li&gt;待收货&lt;/li&gt;
+            &lt;li&gt;待评价&lt;/li&gt;
+            &lt;li&gt;退货退款&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;li class=&quot;menu cmenu2&quot;&gt;我的优惠劵
+            &lt;img src=&quot;../images/myOrder/myOrder1.png&quot;&gt;
+        &lt;/li&gt;
+        &lt;!-- 与li同级的ul是二级菜单 --&gt;
+        &lt;ul class=&quot;submenu&quot;&gt;
+            &lt;li&gt;我的优惠劵&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;li class=&quot;menu cmenu3&quot;&gt;收货地址
+            &lt;img src=&quot;../images/myOrder/myOrder1.png&quot;&gt;
+        &lt;/li&gt;
+        &lt;ul class=&quot;submenu&quot;&gt;
+            &lt;li&gt;地址管理&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;li class=&quot;menu cmenu4&quot;&gt;账号管理
+            &lt;img src=&quot;../images/myOrder/myOrder1.png&quot;&gt;
+        &lt;/li&gt;
+        &lt;ul class=&quot;submenu&quot;&gt;
+            &lt;li&gt;我的信息&lt;/li&gt;
+            &lt;li&gt;安全管理&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+
+&lt;style type=&quot;text/css&quot;&gt;
+*{
+    margin: 0px;
+    padding: 0px;
+}
+li{
+    list-style: none;/* 清除li的点 */
+}
+#leftsidebar_box{
+    width: 160px;
+}
+.menu{
+    background-color: rgb(10,161,237);
+    height: 36px;
+    width: 120px;
+    color: #f5f5f5;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: &quot;黑体&quot;;
+    line-height: 36px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    background-position: 10px center;/* 垂直居中 */
+    cursor: pointer;/* 鼠标悬停的时候变成小手 */
+    margin-bottom: 10px;
+}
+.cmenu1{
+    background-image: url(../images/myOrder/myOrder.png);
+}
+.cmenu2{
+    background-image: url(../images/myOrder/pcenter_icon1.png);
+}
+.cmenu3{
+    background-image: url(../images/myOrder/pcenter_icon2.png);
+}
+.cmenu4{
+    background-image: url(../images/myOrder/pcenter_icon3.png);
+}
+.submenu{
+    background-color: #fff;
+    padding-left: 40px;
+    padding-bottom: 15px;
+}
+.submenu&gt;li{
+    color: #808080;
+    line-height: 40px;
+    font-size: 12px;
+}
+.menu&gt;img{
+    float: right;
+    margin-top: 12px;
+    margin-right: 5px;
+    }
+&lt;/style&gt;
+</code></pre>
+
+<h3>总结: 1. 确定宽高(div不写宽默认是父级的宽)</h3>
+<h3>2. 考虑背景问题	(颜色和图片)</h3>
+<h3>3. 内部字体问题(字号,颜色,字体,对齐)</h3>
+<h3>4. 位置的微调(margin padding 浮动 定位)</h3>
+<h3>注意: margin会移动元素的位置</h3>
+<h3>padding会改变元素占据页面的大小</h3>
+<h3>溢出属性 overflow</h3>
+<pre><code>visible 溢出部分可见
+hidden 溢出部分隐藏
+scroll 溢出部分显示滚动条
+
+
+&lt;div id=&quot;d1&quot;&gt;
+    &lt;div id=&quot;d2&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;style type=&quot;text/css&quot;&gt;
+/* 
+    visible 溢出部分可见
+    hidden 溢出部分隐藏
+    scroll 溢出部分显示滚动条
+ */
+ #d1{
+    width: 550px;
+    height: 300px;
+    background-color: #990066;
+    overflow: hidden;
+ }
+ #d2{
+    width: 500px;
+    height: 500px;
+    background-color: #006699;
+    margin-top: 20px;
+ }
+
+&lt;/style&gt;
+</code></pre>
+
+<h2>常见复杂属性</h2>
+<ol>
+<li>
+<p>display 控制元素的显示方式</p>
+<pre><code>display:block; 按照块级元素进行显示
+display:inline;按照行内元素进行显示,一般不用
+display:none;  隐藏元素
+
+&lt;span&gt;我是span,我是一个行内元素&lt;/span&gt;
+
+
+span{
+   display:block;
+    width:200px;
+    height:200px;
+    border:2px solid red;
+    font-size: 20px;
+    color: #f00;
+    margin-top: 100px;
+}
+</code></pre>
+
+</li>
+</ol>
+<h3>总结:行内元素:一行中可以有多个,从左往右依次摆放</h3>
+<h3>行内元素,宽高,上下外边距失效</h3>
+<h3>块级元素:独占一行,只有块级元素可以设置宽高和上下外边距</h3>
+<h3>display:inline;</h3>
+<h3>display:block;</h3>
+<h3>display:inline-block;行内块!</h3>
+<h3>与其他行内元素(行内块)共占一行</h3>
+<h3>可以改变宽高,上下外边距</h3>
+<h3>行内块非常容易出bug,使用要小心</h3>
+<h3>课堂练习--一个a标签模拟学子商城登录按钮</h3>
+<pre><code>&lt;body&gt;
+    &lt;a href=&quot;#&quot; id=&quot;login_btn&quot;&gt;登录&lt;/a&gt;
+&lt;/body&gt;
+
+&lt;style type=&quot;text/css&quot;&gt;
+#login_btn{
+    display: block;
+    width: 250px;
+    height: 40px;
+
+    background: -webkit-linear-gradient(top, #006699 0%, #990066 100%);
+
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    border-radius:4px;
+    font-family: &quot;黑体&quot;;
+}
+&lt;/style&gt;
+</code></pre>
+
+<h2><strong>浮动 float</strong></h2>
+<pre><code>    float:left;元素浮动起来往左放
+    float:right;元素浮动起来往右放
+</code></pre>
+
+<h3>一旦元素设置了浮动属性</h3>
+<h3>当前元素将会脱离默认文档流</h3>
+<h3>在默认文档流之上进行渲染绘制</h3>
+<h3>元素浮动后,先前的位置将会被其他元素占用</h3>
+<h3>float最常见的用法,是把块级元素横向排列</h3>
+<pre><code>    &lt;body&gt;
+        &lt;div id=&quot;d1&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;d2&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;d3&quot;&gt;&lt;/div&gt;
+        &lt;div id=&quot;d4&quot;&gt;fafdasfsdafsdafdsafsdfasdfsdafsadfsdfsdsfsdfdfdasfsd&lt;/div&gt;
+    &lt;/body&gt;
+
+    &lt;style type=&quot;text/css&quot;&gt;
+        #d1{
+            width: 300px;
+            height: 200px;
+            background: #006699;
+            float: left;
+        }
+        #d2{
+            width: 200px;
+            height: 300px;
+            background: #990066;
+            float: left;
+        }
+        #d3{
+            width: 250px;
+            height: 250px;
+            background: #660099;
+            float: left;
+        }
+        #d4{
+            height: 50px;
+            background: black;
+            color: #fff;
+            /* 当前元素将不会被浮动的元素所覆盖 */
+            clear: both;/* 清除浮动 */
+        }
+    &lt;/style&gt;
+</code></pre>
+
+<h2>作业</h2>
+<h3>课上前6个demo重新写一遍</h3>
+<h3>了解display none block inline特性</h3>
+<h3>能够表述浮动</h3>
+<h3>预习定位</h3>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

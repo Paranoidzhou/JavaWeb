@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>简易电子时钟</title>
+<script type="text/javascript">
+var id;
+function start(){
+	if(id){//id在undefined和null的情况才会启动定时器
+		return;
+	}
+	var oP=document.getElementById("clock");
+	id=setInterval(function(){
+		var d=new Date();
+		var now=d.toLocaleTimeString();
+		oP.innerHTML=now;
+	},1000);
+}
+function stop(){
+	//id非空时,定时器处于启动状态,这样可以停止
+	if(id){
+		clearInterval(id);
+		//如果此时不给ID赋值null
+		//下次点击启动时,会进入if块直接返回.
+		id=null;
+	}
+}
+</script>
+<style type="text/css">
+	#clock{
+		width: 200px;
+		height: 30px;
+		border: 2px solid #f00;
+		text-align: center;
+		line-height: 30px;
+		font-size: 20px;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<input type="button" value="开始" onclick="start();">
+		<input type="button" value="停止" onclick="stop();">
+		<p id="clock"></p>
+	</div>
+</body>
+</html>
+
+
+
+
+
+

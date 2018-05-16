@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery选择器的演示</title>
+<script type="text/javascript" src="../jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//1.基本选择器
+	$("li");
+	$("#gz");
+	$(".sz");
+	$("ul li");
+	$("ul>#gz");
+	$("ul .sz");
+	//2.层次选择器
+	$("#gz+li");//选择他的弟弟
+	$("#gz~");//选择他的弟弟们
+	//3.过滤选择器
+	//4.表单选择器
+});
+</script>
+<style type="text/css">
+li{}
+#gz{}
+.class{}
+ul #gz{}
+ul>#gz{}
+ul>li{}
+</style>
+</head>
+<body>
+	<ul>
+		<li>北京</li>
+		<li>上海</li>
+		<li id="gz">广州</li>
+		<li class="sz">深圳</li>
+		<li>佳木斯儿</li>
+		<li>杭州</li>
+		<li></li>
+		<li style="display: none">澳门</li>
+	</ul>
+	<input type="text" disabled="disabled"><br>
+	<input type="text" readonly="readonly"><br>
+	
+	<input type="radio" name="gender" checked="checked">男
+	<input type="radio" name="gender">女
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>简易计算器</title>
+<script type="text/javascript">
+function cal(){
+	var input=document.getElementById("num");
+	var num=input.value;
+	//开始计算
+	try{
+		input.value=eval("("+num+")");
+	}catch(e){
+		input.value="Error";
+	}
+}
+</script>
+</head>
+<body>
+	<input type="text" id="num">
+	<input type="button" value="计算" 
+	onclick="cal();">
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+var cities=[
+  ["石家庄","保定","张家口"],
+  ["济南","德州","青岛","蓬莱"],
+  ["南京","常州","无锡","张家港"]
+];
+function chg(){
+	//获取index
+	//var index=$("#province").val();
+	var index=$("#province option:selected").val();
+	//获取二级城市数据
+	var pcities=cities[index];
+	//删除旧城市//这里使用remove删除
+/* 	var options=$("#city option");
+	for(var i=options.length-1;i>0;i--){
+		$("#city option:eq("+i+")").remove();
+	} */
+	//选择器找到是第二个sel中所有option
+	//:gt(0)--->index>0都删除
+	$("#city option").remove(":gt(0)");
+	//$("#city").html("<option>请选择</option>");
+	//追加新城市
+	if(pcities){
+		for(var i=0;i<pcities.length;i++){
+			//创建新节点,挂DOM树上
+			$("#city").append($("<option>"+pcities[i]+"</option>"));
+		}
+	}
+}
+</script>
+</head>
+<body>
+	省:
+	<select onchange="chg();" id="province">
+		<option value="-1">请选择</option>
+		<option value="0">河北省</option>
+		<option value="1">山东省</option>
+		<option value="2">江苏省</option>
+	</select>
+	市:
+	<select id="city">
+		<option>请选择</option>
+	</select>
+</body>
+</html>

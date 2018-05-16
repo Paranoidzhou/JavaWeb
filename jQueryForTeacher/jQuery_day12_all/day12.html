@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>day12</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>day12</h1>
+<h2>复习</h2>
+<h3>读写内容</h3>
+<pre><code>    obj.html();/obj.html(&quot;&quot;);
+    obj.test();/obj.test(&quot;&quot;);
+    obj.val();/obj.val(&quot;&quot;);
+</code></pre>
+
+<h3>增删节点</h3>
+<h3>1.创建新节点</h3>
+<pre><code>    $(&quot;&lt;span&gt;嘿嘿嘿&lt;/span&gt;&quot;)
+</code></pre>
+
+<h3>2.挂到dom树上</h3>
+<pre><code>    parent.append(obj)//添加最后一个子节点
+    parent.prepend(obj)//添加第一个子节点
+    brother.after(obj);//添加一个弟弟节点
+    brother.before(obj);//添加一个哥哥节点
+</code></pre>
+
+<h3>3.删除节点</h3>
+<pre><code>    obj.remove();
+    obj.remove(selector);//满足selector条件的节点被删除
+    obj.empty();
+    parent.html(&quot;&quot;);
+</code></pre>
+
+<h3>对样式的操作</h3>
+<pre><code>    obj.addClass(&quot;&quot;);
+    obj.removeclass(&quot;&quot;);//删除某一个class
+    obj.removeclass();//删除所有的样式
+    obj.hasClass(&quot;&quot;)//是否应用了某一个样式
+    obj.toggleClass(&quot;&quot;);//切换某一个样式
+</code></pre>
+
+<h3>jQuery方法的返回值问题</h3>
+<h2>通过节点关系,查找节点</h2>
+<pre><code>obj.children();/obj.children(selector);//获取直接子节点
+obj.next();/obj.next(selector);//下一个弟弟
+obj.prev()/obj.prev(selector);//上一个哥哥
+obj.siblings();/obj.siblings(selector)//查询所有的兄弟,结果不含自己
+
+obj.find(selector);//查找满足条件所有后代
+obj.parent();
+</code></pre>
+
+<h3>课堂练习</h3>
+<p><img src="1.png" /></p>
+<pre><code>    &lt;body&gt;
+        &lt;ul id=&quot;nav&quot;&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;navLink&quot;&gt;达内java&lt;/a&gt;&lt;/li&gt;
+            &lt;ul class=&quot;menu&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;课程介绍&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;研发团队&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;讲师风采&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;联系我们&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;navLink&quot;&gt;达内java&lt;/a&gt;&lt;/li&gt;
+            &lt;ul class=&quot;menu&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;课程介绍&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;研发团队&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;讲师风采&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;联系我们&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;navLink&quot;&gt;达内java&lt;/a&gt;&lt;/li&gt;
+            &lt;ul class=&quot;menu&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;课程介绍&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;研发团队&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;讲师风采&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;联系我们&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;navLink&quot;&gt;达内java&lt;/a&gt;&lt;/li&gt;
+            &lt;ul class=&quot;menu&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;课程介绍&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;研发团队&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;讲师风采&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;联系我们&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;navLink&quot;&gt;达内java&lt;/a&gt;&lt;/li&gt;
+            &lt;ul class=&quot;menu&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;课程介绍&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;研发团队&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;讲师风采&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;联系我们&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/ul&gt;
+    &lt;/body&gt;
+
+    &lt;style type=&quot;text/css&quot;&gt;
+    ul ul{
+        display: none;
+    }
+    li{
+        list-style: none;
+    }
+    &lt;/style&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+    $(function(){
+        $(&quot;#nav&gt;li&quot;).click(function(){
+            if($(this).next().css(&quot;display&quot;)==&quot;block&quot;){
+                //如果点击时,自己的二级菜单是显示状态,
+                //把自己的二级菜单关掉
+                $(this).next().css(&quot;display&quot;,&quot;none&quot;);
+                //$(&quot;.menu&quot;).css(&quot;display&quot;,&quot;none&quot;);
+            }else{
+                //自己的二级菜单没打打开
+                //全部关闭,打开自己的弟弟
+                //$(&quot;.menu&quot;).css(&quot;display&quot;,&quot;none&quot;);
+                //$(this).next().css(&quot;display&quot;,&quot;block&quot;);
+                //把自己的弟弟打开,
+                //再把除了弟弟以外的二级ul都关掉
+                $(this).next().css(&quot;display&quot;,&quot;block&quot;)
+                .siblings(&quot;.menu&quot;).css(&quot;display&quot;,&quot;none&quot;);
+            }
+
+        });
+    });
+&lt;/script&gt;
+</code></pre>
+
+<h3>课堂练习,学子商城二级菜单</h3>
+<pre><code>    $(function(){
+        $(&quot;.menu&quot;).click(function(){
+            if($(this).next().css(&quot;display&quot;)==&quot;block&quot;){
+                //把所有的ul都关闭
+                //所有的箭头都向右
+                $(&quot;.submenu&quot;).removeClass(&quot;dis&quot;)
+                .addClass(&quot;hide&quot;);
+                $(&quot;.menu&quot;).children(&quot;img&quot;)
+                .attr(&quot;src&quot;,&quot;../images/myOrder/myOrder1.png&quot;);
+            }else{
+                //关闭所有ul,把箭头向右
+                $(&quot;.submenu&quot;).removeClass(&quot;dis&quot;)
+                .addClass(&quot;hide&quot;);
+                $(&quot;.menu&quot;).children(&quot;img&quot;)
+                .attr(&quot;src&quot;,&quot;../images/myOrder/myOrder1.png&quot;);
+                //打开弟弟ul,把箭头向下
+                $(this).next().removeClass(&quot;hide&quot;)
+                .addClass(&quot;dis&quot;);
+                $(this).children(&quot;img&quot;)
+                .attr(&quot;src&quot;,&quot;../images/myOrder/myOrder2.png&quot;);
+            }
+        });
+    });
+</code></pre>
+
+<h3>课堂练习</h3>
+<p><img src="3.png" /></p>
+<pre><code>&lt;body&gt;
+&lt;h1&gt;真划算&lt;/h1&gt;
+&lt;table&gt;
+&lt;tr&gt;
+    &lt;th&gt;商品&lt;/th&gt;
+    &lt;th&gt;单价(元)&lt;/th&gt;
+    &lt;th&gt;颜色&lt;/th&gt;
+    &lt;th&gt;库存&lt;/th&gt;
+    &lt;th&gt;好评率&lt;/th&gt;
+    &lt;th&gt;操作&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;苹果air&lt;/td&gt;
+    &lt;td&gt;26000&lt;/td&gt;
+    &lt;td&gt;银色&lt;/td&gt;
+    &lt;td&gt;12&lt;/td&gt;
+    &lt;td&gt;50%&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;加入购物车&quot; 
+        onclick=&quot;add_shoppingcart(this);&quot;&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;迪奥口红&lt;/td&gt;
+    &lt;td&gt;300&lt;/td&gt;
+    &lt;td&gt;#520&lt;/td&gt;
+    &lt;td&gt;800&lt;/td&gt;
+    &lt;td&gt;99%&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;加入购物车&quot; 
+        onclick=&quot;add_shoppingcart(this)&quot;&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;戴森吹风机&lt;/td&gt;
+    &lt;td&gt;3200&lt;/td&gt;
+    &lt;td&gt;红色全球限量&lt;/td&gt;
+    &lt;td&gt;3&lt;/td&gt;
+    &lt;td&gt;100%&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;加入购物车&quot; 
+        onclick=&quot;add_shoppingcart(this)&quot;&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;卫聋辣条&lt;/td&gt;
+    &lt;td&gt;2&lt;/td&gt;
+    &lt;td&gt;无色变态辣&lt;/td&gt;
+    &lt;td&gt;5000&lt;/td&gt;
+    &lt;td&gt;100%&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;加入购物车&quot; 
+        onclick=&quot;add_shoppingcart(this)&quot;&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;樱桃机械键盘&lt;/td&gt;
+    &lt;td&gt;560&lt;/td&gt;
+    &lt;td&gt;黑色&lt;/td&gt;
+    &lt;td&gt;50&lt;/td&gt;
+    &lt;td&gt;100%&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;加入购物车&quot; 
+        onclick=&quot;add_shoppingcart(this)&quot;&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+    &lt;td&gt;大宝sod蜜&lt;/td&gt;
+    &lt;td&gt;26&lt;/td&gt;
+    &lt;td&gt;乳白色&lt;/td&gt;
+    &lt;td&gt;5000&lt;/td&gt;
+    &lt;td&gt;100%&lt;/td&gt;
+    &lt;td align=&quot;center&quot;&gt;
+        &lt;input type=&quot;button&quot; value=&quot;加入购物车&quot; 
+        onclick=&quot;add_shoppingcart(this)&quot;&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;h1&gt;购物车&lt;/h1&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;商品&lt;/th&gt;
+            &lt;th&gt;单价(元)&lt;/th&gt;
+            &lt;th&gt;数量&lt;/th&gt;
+            &lt;th&gt;金额&lt;/th&gt;
+            &lt;th&gt;删除&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody id=&quot;goods&quot;&gt;
+
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan=&quot;3&quot; align=&quot;right&quot;&gt;总计&lt;/td&gt;
+            &lt;td id=&quot;total&quot;&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+
+
+    &lt;style type=&quot;text/css&quot;&gt;
+    h1{
+    text-align: center;
+    }
+    table{
+    margin: 0 auto;
+    width: 60%;
+    border: 2px solid #aaa;
+    border-collapse: collapse;
+    }
+    table th,table td{
+    border: 2px solid #aaa;
+    padding: 5px;
+    }
+    &lt;/style&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+    //加入购物车的函数
+    function add_shoppingcart(btn){
+        //第一种获取name和price的思路
+        //var tr=$(btn).parent().parent();
+        //var name=tr.children().eq(0).text();
+        //var price=tr.children().eq(1).text();
+        //第二种获取name和price的思路
+        var tds=$(btn).parent().siblings();
+        var name=tds.eq(0).text();
+        var price=tds.eq(1).text();
+
+        var new_tr=$('&lt;tr&gt;'
+                +'&lt;td&gt;'+name+'&lt;/td&gt;'
+                +'&lt;td&gt;'+price+'&lt;/td&gt;'
+                +'&lt;td&gt;'
+                 +'&lt;input type=&quot;button&quot; value=&quot;-&quot; onclick=&quot;chg(this,-1)&quot;;&gt;'
+                 +'&lt;input type=&quot;text&quot; size=&quot;3&quot; readonly value=&quot;1&quot;&gt;'
+                 +'&lt;input type=&quot;button&quot; value=&quot;+&quot; onclick=&quot;chg(this,1)&quot;;&gt;'
+                +'&lt;/td&gt;'
+                +'&lt;td&gt;'+price+'&lt;/td&gt;'
+                +'&lt;td&gt;&lt;input type=&quot;button&quot; value=&quot;X&quot; onclick=&quot;del(this);&quot;&gt;&lt;/td&gt;'
+            +'&lt;/tr&gt;');
+        //挂在tbody下面
+        $(&quot;#goods&quot;).append(new_tr);
+        total();
+    }
+    function del(btn){
+        $(btn).parent().parent().remove();
+        total();
+    }
+    function chg(btn,n){
+        var amount=0;
+        if(n&gt;0){//点的是+号
+            //获取文本框的值
+            amount=parseInt($(btn).prev().val());
+            //console.log(amount);
+            $(btn).prev().val(++amount);
+        }else{//点的是-号
+            amount=parseInt($(btn).next().val());
+            if(amount&lt;=1){
+                return;
+            }
+            $(btn).next().val(--amount);
+        }
+        //修改金额
+        //1.获取单价
+        var tbs=$(btn).parent().siblings();
+        var price=parseFloat(tbs.eq(1).text());
+        var money=price*amount;
+        tbs.eq(2).text(money);
+        total();
+    }
+    function total(){
+        var trs=$(&quot;#goods tr&quot;);
+        var sum=0;
+        for(var i=0;i&lt;trs.length;i++){
+            //得到目标td
+            var td=trs.eq(i).children().eq(3);
+            //得到当前金额
+            var money=parseFloat(td.text());
+            //得到总价
+            sum+=money;
+        }
+        $(&quot;#total&quot;).text(sum);
+    }
+    &lt;/script&gt;
+</code></pre>
+
+<h3>作业</h3>
+<h3>1.简易的二级菜单</h3>
+<h3>2.学子商城二级菜单</h3>
+<h3>3.简易的购物车(欢迎奇葩思路)</h3>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

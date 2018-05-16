@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>弹出框的演示,及定时器的实验</title>
+<script type="text/javascript">
+	//1.弹出框
+	function fn1(){
+		window.alert("你好");
+	}
+	//2.确认框
+	function fn2(){
+		var flag=window.confirm("how are you!!");
+		console.log(flag);
+	}
+	//3.输入框
+	function fn3(){
+		var str=window.prompt("中午吃的什么?");
+		console.log(str);
+	}
+	//周期性定时器
+	function fn4(){//每一秒打印一个数 5,4,3,2,1
+		var num=5;
+		var id=setInterval(function(){
+			console.log(num--);
+			if(!num){// num==0
+				clearInterval(id);
+			}
+		},1000);
+		console.log("蹦蹦");
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="按钮1"  
+	onclick="fn1();">
+	<input type="button" value="按钮2"  
+	onclick="fn2();">
+	<input type="button" value="按钮3"  
+	onclick="fn3();">
+	<input type="button" value="启动周期性定时器"  
+	onclick="fn4();">
+</body>
+</html>
+
+
+
+
+
+

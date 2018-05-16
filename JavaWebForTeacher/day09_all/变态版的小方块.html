@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .oDiv1{
+                width: 800px;
+                margin:0 auto;
+                height: 200px;
+            }
+            .oDiv1 li{
+                width: 100px;
+                height: 100px;
+                float: left;
+                list-style: none;
+            }
+            #oli1{
+                background: red;
+            }
+            #oli2{
+                background: #FF8040;
+            }
+            #oli3{
+                background: pink;
+            }
+            #oli4{
+                background: #FF00FF;
+            }
+            #oli5{
+                background: #400080;
+            }
+            #oli6{
+                background: #00FFFF;
+            }
+           
+
+             #oDiv2{
+                width: 800px;
+                height: 200px;
+                margin:0 auto;
+            }
+            #oDiv2 li{
+                width: 100px;
+                height: 100px;
+                float: left;
+                list-style: none;
+                display: none;
+            }
+            #oli11{
+                background: red;
+            }
+            #oli12{
+                background: #FF8040;
+            }
+            #oli13{
+                background: pink;
+            }
+            #oli14{
+                background: #FF00FF;
+            }
+            #oli15{
+                background: #400080;
+            }
+            #oli16{
+                background: #00FFFF;
+            }
+           
+        </style>
+        <script>
+           window.onload=function(){
+            var oli1=document.getElementById('oli1');
+            var oli2=document.getElementById('oli2');
+            var oli3=document.getElementById('oli3');
+            var oli4=document.getElementById('oli4');
+            var oli5=document.getElementById('oli5');
+            var oli6=document.getElementById('oli6');
+           
+            var oli11=document.getElementById('oli11');
+            var oli12=document.getElementById('oli12');
+            var oli13=document.getElementById('oli13');
+            var oli14=document.getElementById('oli14');
+            var oli15=document.getElementById('oli15');
+            var oli16=document.getElementById('oli16');
+            
+
+            oli1.onclick=function(){
+                    oli1.style.display='none';
+                    oli11.style.display='block';
+            }
+            oli2.onclick=function(){
+                    oli2.style.display='none';
+                    oli12.style.display='block';
+            }
+            oli3.onclick=function(){
+                    oli3.style.display='none';
+                    oli13.style.display='block';
+            }
+            oli4.onclick=function(){
+                    oli4.style.display='none';
+                    oli14.style.display='block';
+            }
+            oli5.onclick=function(){
+                    oli5.style.display='none';
+                    oli15.style.display='block';
+            }
+            oli6.onclick=function(){
+                    oli6.style.display='none';
+                    oli16.style.display='block';
+            }
+           
+            oli11.onclick=function(){
+                    oli11.style.display='none';
+                    oli1.style.display='block';
+            }
+            oli12.onclick=function(){
+                    oli12.style.display='none';
+                    oli2.style.display='block';
+            }
+            oli13.onclick=function(){
+                    oli13.style.display='none';
+                    oli3.style.display='block';
+            }
+            oli14.onclick=function(){
+                    oli14.style.display='none';
+                    oli4.style.display='block';
+            }
+            oli15.onclick=function(){
+                    oli15.style.display='none';
+                    oli5.style.display='block';
+            }
+            oli16.onclick=function(){
+                    oli16.style.display='none';
+                    oli6.style.display='block';
+            }
+           
+           }
+
+        </script>
+    </head>
+    <body>
+    <div class="oDiv1">
+            <ul>
+                <li id="oli1"></li>
+                <li id="oli2"></li>
+                <li id="oli3"></li>
+                <li id="oli4"></li>
+                <li id="oli5"></li>
+                <li id="oli6"></li>
+                
+            </ul>
+    </div>
+    <div id="oDiv2">
+            <ul>
+                <li id="oli11"></li>
+                <li id="oli12"></li>
+                <li id="oli13"></li>
+                <li id="oli14"></li>
+                <li id="oli15"></li>
+                <li id="oli16"></li>
+                
+            </ul>
+    </div>
+    </body>
+</html>

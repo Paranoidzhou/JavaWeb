@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>WebDay08</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h2 id="-form-">完善form表单的验证：</h2>
+<p><img src="1.png" alt=""></p>
+<pre><code>    &lt;body&gt;
+        &lt;form action=&quot;http://www.tmooc.cn&quot;   
+        onsubmit=&quot;return checkUser()*checkPwd()==1;&quot;&gt;
+            &lt;div&gt;
+                账号:&lt;input type=&quot;text&quot; id=&quot;username&quot; 
+                onblur=&quot;checkUser();&quot;&gt;
+                &lt;span id=&quot;msg_user&quot;&gt;5-10位数字,字母,下划线&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                密码:&lt;input type=&quot;password&quot; id=&quot;pwd&quot; 
+                onblur=&quot;checkPwd();&quot;&gt;
+                &lt;span id=&quot;msg_pwd&quot;&gt;5-10位数字,字母,下划线&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;input type=&quot;submit&quot; value=&quot;登录&quot;&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+
+    &lt;style type=&quot;text/css&quot;&gt;
+    .ok{
+        color: #0f0;
+    }
+    .error{
+        color: #f00;
+    }
+    &lt;/style&gt;
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        function checkUser(){
+            //获取有户名的字符串
+            var code=document
+            .getElementById(&quot;username&quot;).value;
+            //获得span对象
+            var span=document.getElementById(&quot;msg_user&quot;);
+            //获得正则对象
+            //5-10位数字,字母,下划线
+            var reg=/^\w{5,10}$/;
+            //开始验证
+            if(reg.test(code)){
+                //格式正确,span字体变绿
+                span.className=&quot;ok&quot;;
+                return true;
+            }else{
+                span.className=&quot;error&quot;;
+                return false;
+            }
+        }
+        function checkPwd(){
+            var code=document
+            .getElementById(&quot;pwd&quot;).value;
+            var span=document.getElementById(&quot;msg_pwd&quot;);
+            var reg=/^\w{5,10}$/;
+            if(reg.test(code)){
+                span.className=&quot;ok&quot;;
+                return true;
+            }else{
+                span.className=&quot;error&quot;;
+                return false;
+            }
+        }
+    &lt;/script&gt;
+</code></pre><ul>
+<li>学子商城登陆页表单验证<br><img src="2.png" alt=""></li></ul>
+<h2 id="function-">function对象：</h2>
+<ul>
+<li>1.js中函数就是function对象</li><li>2.函数名就是指向function对象的引用<pre><code>  var fn1 = function(){}
+  function fn1(){}         效果同上一样
+</code></pre></li><li>3.使用函数名可以直接访问函数对象</li><li><p>4.函数名后面跟上()，是调用函数</p>
+<pre><code>  var fn1 = function(){alert(&quot;我被猪点了&quot;);}
+
+  fn1；          //返回：ƒ (){alert(&quot;我被猪点了&quot;);}
+  fn1()；        //返回：alert事件，出现弹框。
+</code></pre></li><li><p>5.函数的返回值：<br> 5.1 不定义返回值的类型<br> 5.2 默认返回值是undefined<br> 5.3 可以使用return返回具体的值</p>
+</li><li><p>6.函数的参数：</p>
+<pre><code>  function x(a,b){
+      return a-b;
+  }
+</code></pre></li></ul>
+<h3 id="js-">js的函数没有重载</h3>
+<ul>
+<li><p>函数被调用时，只要函数名一样，无论传入多少个参数，调用的都是同一个函数对象，所以js没重载。但是可以实现和重载一样的调用方式，使用arguments.</p>
+</li><li><p>传来的参数，系统会自动生成一个arguments数组，我们只要遍历这个数组，就能拿到传入的值。</p>
+<pre><code>  function add(){
+      var num = 0;
+      for(var i=0;i&lt;arguments.length;i++){
+          num+=arguments[i];
+      }
+      return num;
+  }
+  该实例代码能实现传入的参数进行累加。
+</code></pre></li><li><p>js在调用函数的过程中，只检测函数名，不检测参数列表。如果参数名称匹配，则直接调用，可以使用arguments访问传递过来的参数列表。</p>
+</li><li><p>js中没有重载，如果出现相同函数名的两个函数，后一个有效。因为代码由上往下执行，后写的函数覆盖了前一个函数。</p>
+</li></ul>
+<h3 id="-">匿名函数</h3>
+<ul>
+<li>所谓匿名函数，就是不给函数起名字。</li><li>用法：当一个函数不需要在别的地方被调用，则可以使用匿名函数。</li></ul>
+<h3 id="-">全局函数</h3>
+<ul>
+<li>全局函数可用于所有的JavaScript对象。</li><li>它不需要对象调用。<pre><code>  常用全局函数： typeOf();
+               isNaN();
+               parseInt();
+               parseFloat();
+               eval(); 
+</code></pre></li><li>arguments：<br><img src="3.png" alt=""> </li></ul>
+<h4 id="eval-">eval();</h4>
+<ul>
+<li><p>功能一：eval函数用于计算表达式字符串。</p>
+<pre><code>  var str = &quot;1+2+3&quot;;
+  eval(str);
+  输出：6 
+</code></pre></li><li>功能二：eval函数用于<strong>执行</strong>字符串中的js代码。</li><li><pre><code>  var str = &quot;alert(&#39;eval能直接执行代码&#39;)&quot;;
+  var str = &quot;function a(){alert(&#39;eval能直接执行代码&#39;);}a();&quot;
+  eval(str);   
+  输出效果：弹窗出现eval能直接执行代码.
+</code></pre><blockquote>
+<p>eval重要的作用就是动态执行服务器传过来的JavaScript代码。</p>
+</blockquote>
+<pre><code>  function cal(){
+  var input = document.getElementById(&quot;num&quot;);
+  var num = input.value;
+  //开始计算：
+  try{
+  input.value=eval(&quot;(&quot;+num+&quot;)&quot;); 
+  //使用eval进行计算的时候，最好在数字两边加括号，以免出现BUG
+  }catch(e){
+      input.value=&quot;error&quot;;
+  }
+}
+</code></pre></li></ul>
+<h2 id="-">外部对象概述：</h2>
+<h3 id="bom-dom-">BOM与DOM：</h3>
+<p><img src="4.png" alt=""></p>
+<ul>
+<li>BOM (Browser Object Model):浏览器对象模型</li><li>DOM (Document Object Model):文档对象模型</li></ul>
+<blockquote>
+<p>BOM总结：通过BOM，我们可以移动窗口、更改状态栏文本、执行其他不与页面内容发生直接联系的操作(不操作标签)。<br>BOM是没有标准的，每个浏览器标准都不一样、但是却被浏览器厂商广泛支持。</p>
+<hr>
+<p>DOM总结：DOM定义了访问和操作HTML的标准方法，通过对DOM树的操作，来实现对HTML文档数据的操作。</p>
+</blockquote>
+<h2 id="js-bom-">JS相关BOM操作：</h2>
+<h3 id="window-">window对象：表示整个浏览器窗口</h3>
+<ul>
+<li>所有js的全局对象、全局函数以及全局变量，都自动成为window对象的成员(window可以直接点出来)</li><li><p>window的常用属性：</p>
+<pre><code>  document  窗口中显示的HTML文档对象
+  history   浏览过的历史记录对象
+  location  窗口文件地址对象
+  screen    当前屏幕对象
+  navigator 浏览器相关信息对象
+</code></pre></li><li><p>window对象常用的函数：<br>1.弹出框：</p>
+<pre><code>  function fn1(){
+      window.alert(&quot;你好:我是普通弹出框&quot;);
+  }
+  &lt;input type=&quot;button&quot; value=&quot;按钮1&quot; onclick=&quot;fn1();&quot;&gt;
+</code></pre><p>2.确认框：</p>
+<pre><code>  function fn2(){
+      var flag =window.confirm(&quot;Hellow:我是确认框&quot;);    
+      console.log(flag);
+  }
+  &lt;input type=&quot;button&quot; value=&quot;按钮2&quot; onclick=&quot;fn2();&quot;&gt;
+</code></pre><p>3.输入框：</p>
+<pre><code>  function fn3(){
+      var str = window.prompt(&quot;中午吃了什么？&quot;);
+      console.log(str);
+  }
+  &lt;input type=&quot;button&quot; value=&quot;按钮3&quot; onclick=&quot;fn3();&quot;&gt;
+</code></pre></li></ul>
+<h2 id="-">定时器：</h2>
+<h3 id="-">主要用于网页动态时钟、倒计时、轮播图、无缝滚动、跑马灯效果。</h3>
+<ul>
+<li><p>周期性定时器：以一定的时间间隔执行代码，循环往复。</p>
+<pre><code>  setInterval(exp,time);            /*开始定时器*/
+  exp:要执行js语句（一般为匿名函数）
+  time:设定时间周期(单位为毫秒)
+  返回值：返回已经启动的定时器ID
+
+  clearInterval(ID);                /*关闭定时器*/
+  ID:填入开启定时器返回的ID
+</code></pre><p>实例代码：</p>
+<pre><code>  function fn4(){    //每一秒打印一个数--&gt;5、4、3、2、1
+  var num = 5;
+  var id = setInterval(function(){
+      console.log(num--);
+      if(!num){
+          clearInterval(id);
+      }
+  },1000);
+  console.log(&quot;Boom Boom Boom&quot;);
+}
+</code></pre><blockquote>
+<p>总结：启动定时器就相当于启动了一个子线程，当前方法fn4相当于主线程。两个线程之间并发执行，相互不等待。</p>
+</blockquote>
+</li></ul>
+<h3 id="-">课堂练习：网页版电子时钟：</h3>
+<p><img src="5.png" alt=""></p>
+<blockquote>
+<pre><code>   &lt;title&gt;时钟小Demo&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+    var id;
+    function start(){
+          console.log(id);
+          if(id){  //id为undefined和null的情况下才会启动定时器
+              return;
+          }
+          var oP = document.getElementById(&quot;clock&quot;); 
+          id = setInterval(function(){
+              var time = new Date();
+              var now = time.toLocaleTimeString();
+              oP.innerHTML=now;
+          },1000);
+        }
+    function stop(){
+            if(id){  //id非空时，定时器处于启动状态，这样可以停止
+                clearInterval(id);
+                id = null;  //不设置成null.下次开启不了定时器
+            }    
+        }
+    &lt;/script&gt;
+</code></pre><p><img src="6.png" alt=""></p>
+</blockquote>
+<pre><code>    &lt;script type=&quot;text/javascript&quot;&gt;
+    var id;
+    function start(){
+        if(id){//id在undefined和null的情况才会启动定时器
+            return;
+        }
+        var oP=document.getElementById(&quot;clock&quot;);
+        id=setInterval(function(){
+            var d=new Date();
+            var now=d.toLocaleTimeString();
+            oP.innerHTML=now;
+        },1000);
+    }
+    function stop(){
+        //id非空时,定时器处于启动状态,这样可以停止
+        if(id){
+            clearInterval(id);
+            //如果此时不给ID赋值null
+            //下次点击启动时,会进入if块直接返回.
+            id=null;
+        }
+    }
+    &lt;/script&gt;
+</code></pre><ul>
+<li><p>一次性定时器(延迟执行)：在一个设定好的时间间隔之后来执行代码。 </p>
+<pre><code>  setTimeout(exp,time);
+  exp:执行的代码
+  time:需要延迟的时间
+  返回值为:id
+
+  clearTimeout(id);
+</code></pre></li></ul>
+<blockquote>
+<p>发送撤销的案例：<br><img src="7.png" alt=""></p>
+</blockquote>
+<pre><code>    &lt;script type=&quot;text/javascript&quot;&gt;
+       var id;
+        function send(){
+            var oP=document.getElementById(&quot;msg&quot;);
+            oP.innerHTML=&quot;发送中...&quot;;
+            //推迟三秒发送
+            id=setTimeout(function(){
+                oP.className=&quot;ok&quot;;
+                oP.innerHTML=&quot;发送成功&quot;;
+            },3000);
+        }
+        function cancel(){
+            var oP=document.getElementById(&quot;msg&quot;);
+            oP.className=&quot;error&quot;;
+            oP.innerHTML=&quot;已撤销&quot;;
+            clearTimeout(id);
+        }
+    &lt;/script&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+    .ok{
+        color: #0f0;
+    }
+    .error{
+        color: #f00;
+    }
+    &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div&gt;
+            &lt;input type=&quot;button&quot; value=&quot;发送&quot; 
+            onclick=&quot;send();&quot;&gt;
+            &lt;input type=&quot;button&quot; value=&quot;撤销&quot; 
+            onclick=&quot;cancel();&quot;&gt;
+        &lt;/div&gt;
+        &lt;p id=&quot;msg&quot;&gt;&lt;/p&gt;
+    &lt;/body&gt;
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

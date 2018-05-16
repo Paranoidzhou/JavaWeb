@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        div{
+            height: 200px;
+            width: 200px;
+            overflow: hidden;
+            /*margin: 0 auto;*/
+            border-radius: 50%;
+            position: relative;
+            top: 200px;
+            left: 600px;
+        }
+        img{
+            position: absolute;
+        }
+        </style>
+        <script type="text/javascript">
+        window.onload=function(){
+            //找对象
+            var oDiv=document.getElementsByTagName('div')[0];
+            //带下标的情况:单个对象 用class名来寻找
+            //单个对象 用tag名寻找
+            //不带下标的情况:单个对象 用id名寻找
+            //数组对象(多个对象) 用class名或者tag来寻找
+            var oImg=oDiv.getElementsByTagName('img')[0];
+            //添加事件
+            oImg.onmouseover=function(){
+                //事件发生后的行为 动作
+                    oImg.style.height='400px';
+                    oImg.style.width='400px';
+                    oImg.style.top='-100px'
+                    oImg.style.left='-100px';
+
+               oImg.onmouseout=function(){
+                oImg.style.height='200px';
+                oImg.style.width='200px';
+                oImg.style.top=0;
+                oImg.style.left=0;
+
+               } 
+            }
+        }
+        </script>
+    </head>
+    <body>
+    <div>
+        <img src="06.png">
+    </div>
+    </body>
+</html>

@@ -1,0 +1,154 @@
+@CHARSET "UTF-8";
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: "黑体";
+}
+body{
+	background-color: #f5f5f5;
+	color: #666;
+}
+header{
+	width: 1000px;
+	height: 49px;
+	margin: 20px auto;
+}
+header a{
+	margin-left: 40px;
+	float: left;
+}
+header span{
+	margin-left: 10px;
+	font-size: 24px;
+	display: block;
+	float: left;
+	margin-top: 10px;	
+}
+.form-panel{
+	margin:0px auto;
+	height: 560px;
+	width: 1000px;
+	background-image: url(../images/regist.png);
+}
+.form-panel form{
+	width: 280px;
+	background-color: rgba(0,0,0,0.3);
+/* 	border: 2px solid red; */
+	float: right;
+	color: #fff;
+	margin-top: 120px;
+	margin-right: 100px;
+	padding-top: 18px;
+}
+.form-panel h2{
+	border-bottom: 1px solid #fff;
+	padding-bottom: 12px;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 20px;
+	
+}
+.form-panel h2 a{
+	color: #fff;
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: lighter;
+	float: right;
+	margin-top: 12px;
+	margin-right: 10px;
+}
+.field{
+	position: relative;/* 为了内部元素以我定位 */
+	margin: 12px 10px;
+}
+.field input{
+	width: 246px;
+	height: 22px;
+	padding: 5px 5px;
+}
+.field img{
+	position: absolute;
+	top: 4px;
+	right: 8px;	
+}
+.error{
+	color: #f00;
+}
+.ok{
+	color: #0f0;
+}
+.field span{
+	display: block;
+	font-size: 12px;
+	padding-top: 10px;
+	padding-bottom:5px;
+}
+.checkbox{
+	margin-left: 12px;
+}
+.checkbox label{
+	font-size: 12px;
+	position: relative;
+	top:-3px;
+	left: -6px;
+}
+.checkbox a{
+	text-decoration: none;
+	font-size: 12px;
+	color: #fff;
+	position: relative;
+	top: -3px;
+	left: 122px;
+}
+.btn{
+	/* 微调 */
+	margin-left: 10px;
+	padding-bottom: 20px;
+	padding-top: 5px;
+}
+.btn input{
+	display: block;
+	width: 260px;
+	height: 37px;
+	background: -webkit-linear-gradient(top, #27b0f6 0%, #0aa1ed 100%);
+	border: none;
+	border-radius:2px;
+	font-size: 18px;
+	color: #fff;
+	font-family: "黑体";
+	cursor: pointer;
+}
+/* 鼠标在点击和释放之间,称之为激活 */
+/* :active为激活时添加样式 */
+.btn input:active{
+	color: #ff0;
+}
+.server{
+	width: 1000px;
+	margin: 0px auto;
+}
+.server li{
+		width: 65px;
+		float: left;
+		list-style: none;
+		margin: 40px 92px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

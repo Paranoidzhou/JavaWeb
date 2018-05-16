@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>测试优先级</title>
+<style type="text/css">
+ul li span a{/* 深圳红色 */
+	color: #f00;
+}
+ul li .gz{ /* 广州绿色 */
+	color: #0f0;
+} 
+ul a{ /* 所有的a都是990066 */
+	color: #990066;
+}
+ul li span a{
+	color: #660099;
+} 
+</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#">北京</a></li>
+		<li><a href="#">上海</a></li>
+		<li><a href="#" class="gz">广州</a></li>
+		<li><span><a href="#">深圳</a></span></li>
+		<a href="#">佳木斯儿</a>
+	</ul>
+	<a class="gz">....</a>
+	
+	<div id="d1">伪类选择器的演示</div>
+</body>
+</html>

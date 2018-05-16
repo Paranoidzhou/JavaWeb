@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>二级联动菜单</title>
+<script type="text/javascript">
+			var cities=[
+            ["石家庄","保定","张家口"],
+            ["济南","德州","青岛","蓬莱"],
+            ["南京","常州","无锡","张家港"]
+         ];
+			function chg(){
+				//1.获得省的下拉选对象
+				var sel1=document.getElementById("province");
+				//2.获取value,value就是二维数组的index
+				var index=sel1.value;
+				//3.创建pcities保存正确二级城市的数据
+				var pcities=cities[index];
+				//4.删除旧的城市(sel2中的option)
+				var sel2=document.getElementById("city");
+				var options=sel2.getElementsByTagName("option");
+				/*for(var i=1;i<options.length;i++){
+					sel2.removeChild(options[i]);
+				} //上面这个循环算法有问题*/
+				
+/* 				for(var i=options.length-1;i>0;i--){
+					sel2.removeChild(options[i]);
+				} */
+				
+				sel2.innerHTML="<option>请选择</option>";
+				
+				
+				//添加新城市,追加一批option
+				if(pcities){
+					for(var i=0;i<pcities.length;i++){
+						//创建一个新option对象
+						var option=document.createElement("option");
+						//给新option添加内容
+						option.innerHTML=pcities[i];
+						//挂到sel2上
+						sel2.appendChild(option);
+					}
+				}
+			}
+</script>
+</head>
+<body>
+	省:
+	<select onchange="chg();" id="province">
+		<option value="-1">请选择</option>
+		<option value="0">河北省</option>
+		<option value="1">山东省</option>
+		<option value="2">江苏省</option>
+	</select>
+	市:
+	<select id="city">
+		<option>请选择</option>
+	</select>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

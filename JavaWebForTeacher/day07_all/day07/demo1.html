@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>阶乘结算</title>
+<script type="text/javascript">
+function cal(){
+	//1.获取文本框中的值
+	var input=document.getElementById("num");
+	var num=input.value;
+	//2.获取span对象
+	var span=document.getElementById("result");
+	//3.判断num是不是数字
+	if(isNaN(num)){
+		//不是数字,span中提示
+		span.innerHTML="请输入数字";
+	}else{
+		//是数字,先去除小数点
+		num=parseInt(num);
+		//把去除完小数点的整数,放回到文本框中去
+		input.value=num;
+		if(num<0){
+			span.innerHTML="负数没有阶乘";
+		}else if(num==0){
+			span.innerHTML="0的阶乘固定为1";
+		}else{
+			//计算正整数的阶乘
+			var res=1;
+			for(var i=num;i;i--){
+				res*=i;
+			}
+			span.innerHTML=res;
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+	<p>n(正整数)的阶乘 1*2*3...*n</p>
+	<p>0的阶乘,固定为1</p>
+	<p>负数,小数没有阶乘</p>
+	<input type="text" id="num">
+	<input type="button" value="阶乘"   
+	onclick="cal();">
+	<span id="result"></span>
+</body>
+</html>
+
+
+
+
+
+
+
+

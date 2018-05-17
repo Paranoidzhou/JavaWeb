@@ -1,26 +1,46 @@
 ## jQuery：
 
 - 第一个Demo演示：
-   <title>一个JQuery的小Demo</title>
-   	<script type="text/javascript"  src="../jquery-3.1.1.min.js"></script>
-   	<script type="text/javascript">
-   		function bigger(){
-   			//1.获取P的字号;
-   			var size=$("p").css("font-size");
-   			//2.将"16px"变成可以计算的数字，去掉单位.
-   			size = size.replace("px","");
-   			//3.字号加大号，设置P标签的字号;
-   			$("p").css("font-size",++size +"px");
-   		}
-   		
+   	
+
+   	<title>一个JQuery的小Demo</title>
+   	
+   		<script type="text/javascript"  src="../jquery-3.1.1.min.js"></script>
+   	
+   		<script type="text/javascript">
+   	
+   			function bigger(){
+   	
+   				//1.获取P的字号;
+   	
+   				var size=$("p").css("font-size");
+   	
+   				//2.将"16px"变成可以计算的数字，去掉单位.
+   	
+   				size = size.replace("px","");
+   	
+   				//3.字号加大号，设置P标签的字号;
+   	
+   				$("p").css("font-size",++size +"px");
+   	
+   			}
+   	
    	</script>
+   	
    	</head>
+   	
    	<body>
+   	
    		<input type="button" value="+" onclick="bigger();">
+   	
    		<p>jQuery是一个JavaScript库</p>
+   	
    		<p>jQuery极大的简化了JavaScript编程</p>
+   	
    		<p>jQuery非常容易学</p>
-   	</body>
+   	
+   	</body>	
+   	
 
 ## jQuery对象详解：
 ![](1.png)
@@ -71,7 +91,7 @@
       	 - ：lt(index)		匹配下标小于index的元素
 
   2. 内容过滤器：
-      $("li:empty");           //匹配li标签内容为空的li
+               $("li:empty");           //匹配li标签内容为空的li
       	 $("li:contains('州')");  //匹配li标签内容包含'州'的li
 
   3. 可见性过滤器：
@@ -109,7 +129,7 @@
 
 ## jQuery操作DOM
 - jQuery对内容和值得操作.
-   var obj = obj.html();
+           var obj = obj.html();
    	obj.html("<span>123</span>");
 
    	var str = obj.text();

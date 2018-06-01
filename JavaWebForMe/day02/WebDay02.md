@@ -1,7 +1,7 @@
 ## 超链接：用于跳转页面
     <a> A标签内写内容用于跳转网页 </a> 
     <a href= "http://tmooc.cn/web/index_new.html?tedu">TMOOC</a>
-	<a href= "../img/06.png"> >>>跳转到图片<<< </a>	<br>	
+	<a href= "../img/06.png"> >>>跳转到图片<<< </a>	<br>
 	<a href= "Demo02.html"> >>>跳转到本网站另一个页面<<< </a>
 
 > 总结：a标签是行内元素，不换行。添加href属性，a标签才有效果！！href中的url也分相对路径和绝对路径。访问本网站的其他页面使用相对路径、访问其他网站使用绝对路径。
